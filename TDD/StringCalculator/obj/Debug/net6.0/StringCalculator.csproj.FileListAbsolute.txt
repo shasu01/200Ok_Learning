@@ -1,0 +1,12 @@
+C:\Systems\Playground\StringCalculator\bin\Debug\net6.0\StringCalculator.deps.json
+C:\Systems\Playground\StringCalculator\bin\Debug\net6.0\StringCalculator.dll
+C:\Systems\Playground\StringCalculator\bin\Debug\net6.0\StringCalculator.pdb
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.csproj.AssemblyReference.cache
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.AssemblyInfoInputs.cache
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.AssemblyInfo.cs
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.csproj.CoreCompileInputs.cache
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.dll
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\refint\StringCalculator.dll
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\StringCalculator.pdb
+C:\Systems\Playground\StringCalculator\obj\Debug\net6.0\ref\StringCalculator.dll
