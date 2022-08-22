@@ -1,4 +1,5 @@
-﻿using FluentAssertions;
+﻿using System.Globalization;
+using FluentAssertions;
 using NUnit.Framework;
 
 namespace StringCalculator.Tests
@@ -9,10 +10,6 @@ namespace StringCalculator.Tests
         [TestFixture]
         public class Add
         {
-            //Given 1 and 1 should return 2
-            //Given 33 and 5 should return 38
-            //Given 6 and 17 should return 23
-            //Given 11 and 3 should return 14
             [Test]
             public void Given_EmptyString_ShouldReturn_0()
             {
@@ -82,18 +79,49 @@ namespace StringCalculator.Tests
                 result.Should().Be(60);
             }
 
+            [TestCase("1,1",2)]
+            [TestCase("33,5", 38)]
+            [TestCase("6,17", 23)]
+            [TestCase("11,3", 14)]
+            [TestCase("11,3,5,10,100", 129)]
             [Test]
-            public void Given_1_1_ShouldReturn_2()
+            public void Given_StringNumbers_ShouldReturn_ExpectedResult(string numbers, int expectedResult)
             {
                 //Arrange
-                var numbers = "1,1";
                 var sut = CreateStringCalculator();
 
                 //Act
                 var result = sut.Add(numbers);
 
                 //Assert
-                result.Should().Be(2);
+                result.Should().Be(expectedResult);
+            }
+
+            [TestCase("1\n1", 2)]
+            [Test]
+            public void Given_StringNumbersWithNewLine_ShouldReturn_ExpectedResult(string numbers, int expectedResult)
+            {
+                //Arrange
+                var sut = CreateStringCalculator();
+
+                //Act
+                var result = sut.Add(numbers);
+
+                //Assert
+                result.Should().Be(expectedResult);
+            }
+            [TestCase("//;\n1;2", 3)]
+            [Test]
+            public void Given_StringNumbersWithDynamicDelimeter_ShouldReturn_ExpectedResult(string numbers, int expectedResult)
+            {
+                //Arrange
+                var sut = CreateStringCalculator();
+
+                //Act
+                var result = sut.Add(numbers);
+
+                //Assert
+                result.Should().Be(expectedResult);
             }
 
             private StringCalculator CreateStringCalculator()
