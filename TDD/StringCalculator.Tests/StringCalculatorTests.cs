@@ -124,6 +124,22 @@ namespace StringCalculator.Tests
                 result.Should().Be(expectedResult);
             }
 
+            [TestCase("//;\n1;-2", "Negatives Not Allowed, -2 ")]
+            [TestCase("//;\n-1;-2;1", "Negatives Not Allowed, -1 -2 ")]
+            [Test]
+            public void Given_StringNumbersWithNegativeNumber_Should_ThrowException(string numbers, string exception)
+            {
+                //Arrange
+                var sut = CreateStringCalculator();
+
+                //Act
+                Assert.That(() => sut.Add(numbers),
+                    Throws.Exception
+                        .With
+                        .Message.EqualTo(exception));
+            }
+
+
             private StringCalculator CreateStringCalculator()
             {
                 return new StringCalculator();
